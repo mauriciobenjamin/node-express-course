@@ -14,4 +14,13 @@ app.get('/usuarios', (req, res) => {
     });
 });
 
+app.get('/usuarios/:id', (req, res) => {
+    console.log(req.params.id);
+    res.json({
+        success: true,
+        message: 'Tenemos un usuario',
+        user: req.params.id
+    })
+})
+
 app.listen(8000, () => console.log('el servidor esta funcionando'));
